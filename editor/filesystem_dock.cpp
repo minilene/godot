@@ -1313,6 +1313,12 @@ void FileSystemDock::_move_operation_confirm(const String &p_to_path, bool overw
 		bool can_move = _check_existing();
 		if (!can_move) {
 			//ask to do something
+			
+			//THERE SHOULD BE A CONDITION TO VERIFY IF THE FILE IS IN THE SAME DIRECTORY WHICH IT IS BEING MOVED TO.
+			//IF IT IS IN THE SAME DIRECTORY, IT SHOULD DO NOTHING.
+			//IF IT ISN'T IN THE SAME DIRECTORY, THERE SHOULD BE A DIALOG TO CONFIRM IF THE USER WANTS TO MOVE THE FILE
+			//TO ANOTHER DIRECTORY.
+			
 			overwrite_dialog->popup_centered_minsize();
 			overwrite_dialog->grab_focus();
 			return;
